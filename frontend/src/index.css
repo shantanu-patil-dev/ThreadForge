@@ -1,0 +1,71 @@
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-paper: #FAF9F6;
+  --color-panel: #EDE4D3;
+  --color-card: #FFFFFF;
+  --color-primary: #14532D;
+  --color-heading: #18352A;
+  --color-border: #DED8CC;
+  --color-secondary: #686B63;
+  --color-warning: #B7791F;
+  --color-critical: #B42318;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FAF9F6;
+  color: #18352A;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tabular nums for engineering metrics */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Absolute prohibition of blue and purple in selection */
+::selection {
+  background-color: #EDE4D3;
+  color: #18352A;
+}
+
+/* WCAG AA Visible Focus Ring (2px #14532D with white offset) */
+:focus-visible {
+  outline: 2px solid #14532D !0important;
+  outline-offset: 2px !important;
+}
+
+/* Clean 1px engineering border utility */
+.panel-border {
+  border: 1px solid #DED8CC;
+}
+
+/* Print styling for experiment reports */
+@media print {
+  nav, .top-bar, .run-console, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .print-page {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
