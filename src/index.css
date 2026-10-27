@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-warm: #FAF9F6;
+    --panel-beige: #EDE4D3;
+    --border-beige: #DED8CC;
+    --bottle-green: #14532D;
+    --deep-green: #18352A;
+    --text-muted: #3D5549;
+    --alert-amber: #B7791F;
+    --alert-red: #B42318;
+  }
+
+  body {
+    background-color: #FAF9F6;
+    color: #18352A;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom scrollbars matching industrial beige/bottle green */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #EDE4D3;
+}
+::-webkit-scrollbar-thumb {
+  background: #B3ABA0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #14532D;
+}
+
+/* Signal path pulse animation for active MUX channel */
+@keyframes signalFlow {
+  0% {
+    stroke-dashoffset: 24;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-signal-flow {
+  animation: signalFlow 1.2s linear infinite;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #14532D;
+  outline-offset: 2px;
+}
